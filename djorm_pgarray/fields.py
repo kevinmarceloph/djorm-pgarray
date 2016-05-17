@@ -392,7 +392,7 @@ if django.VERSION[:2] >= (1, 7):
         def __init__(self, index, field, *args, **kwargs):
             super(IndexTransform, self).__init__(*args, **kwargs)
             self.index = index
-            self.field = field
+            self._field = field
 
         def as_sql(self, qn, connection):
             lhs, params = qn.compile(self.lhs)
